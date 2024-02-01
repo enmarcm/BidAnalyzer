@@ -22,12 +22,12 @@ function App() {
 
           <div
             className={`min-w-[300px] w-[400px] h-full my-4  shadow-md grid grid-rows-layout rounded-lg ${
-              open ? "blur-lg" : ""
+              open ? "blur-lg pointer-events-none" : ""
             }`}
           >
             <Header />
 
-            <Body />
+            <Body/>
           </div>
         </>
       )}

@@ -1,3 +1,3 @@
 export enum constans{
-    URL_DECRYPT = "https://localhost:7878/decifrate/file"
+    URL_DECRYPT = "https://localhost:7878/decifrate/fileExcel"
 }
