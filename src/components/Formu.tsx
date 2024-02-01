@@ -13,10 +13,11 @@ const Formu = ({
     >
       <label className="text-white flex flex-col gap-3 font-bold text-lg">
         Ingrese la llave privada
+        <span className="font-light text-sm opacity-95">Si no ingresa, se usará la que tiene el servidor por defecto</span>
         <textarea
           name="privateKey"
           id="privateKey"
-          className="rounded-md resize-none h-32 overflow-y-auto bg-inputs p-1"
+          className="rounded-md resize-none h-32 overflow-y-auto bg-inputs p-1 text-sm font-light focus:outline-blue-400 "
         ></textarea>
       </label>
 
@@ -24,7 +25,7 @@ const Formu = ({
         <DragAndDrop nameFile="fileInput" />
       </label>
 
-      <button className="w-full bg-resalt rounded-lg p-2 hover:opacity-55 font-bold">
+      <button className="w-full bg-blue-400 rounded-lg p-2 hover:opacity-55 font-bold">
         Enviar
       </button>
     </form>

@@ -11,17 +11,17 @@ const Modal = ({
   };
 
   return (
-    <div className="rounded bg-opacity-65 w-2/4 bg-white border flex flex-col items-center justify-center gap-4 h-2/4 absolute z-50 p-5 sm:max-w-3/7 sm:h-1/2 ">
-      <div className="flex flex-col">
-        <p className="font-bold">Mensaje:</p>
+    <div className=" md:w-1/3 rounded-lg bg-opacity-65 bg-gray-700 flex p-16 flex-col items-center justify-between gap-4 h-2/4 absolute z-50 sm:h-1/2 sm:w-2/3 ">
+      <div className="flex flex-col text-white">
+        <p className="font-bold ">Mensaje:</p>
         {children}
       </div>
 
       <button
-        className="flex items-center justify-center w-32 h-8 bg-red-500 text-black font-bold hover:opacity-70"
+        className="rounded flex items-center justify-center w-full h-8 bg-red-500 text-white font-bold hover:opacity-70 hover:text-black backdrop-blur-lg"
         onClick={handleClick}
       >
-        X
+        Cerrar
       </button>
     </div>
   );

@@ -3,7 +3,7 @@ export async function formDataProcess({
   privateKey,
   files,
 }: {
-  privateKey: FormDataEntryValue;
+  privateKey: FormDataEntryValue | null;
   files: Array<File>;
 }) {
   try {

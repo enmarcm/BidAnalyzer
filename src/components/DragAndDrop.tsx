@@ -32,7 +32,7 @@ const DragAndDrop = ({ nameFile }: { nameFile: string }) => {
   return (
     <div
       className={`border-dashed border-2 w-full flex flex-col items-center justify-center h-full  ${
-        dragging ? "border-red-500" : "border-resalt"
+        dragging ? "border-red-500" : "border-blue-400"
       } p-4  rounded-md hover: cursor-pointer hover:opacity-55`}
       onDrop={handleDrop}
       onDragOver={handleDragEnter}

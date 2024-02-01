@@ -11,8 +11,8 @@ const Body = () => {
     e.preventDefault();
     const formData = new FormData(e.target as HTMLFormElement);
 
-    const privateKey = formData.get("privateKey");
-    if (!privateKey) return setContent("Falta la private key");
+    const privateKeyGet = formData.get("privateKey");
+    const privateKey = privateKeyGet ? privateKeyGet: null;
 
     setLoading(true);
     const result = await formDataProcess({ privateKey, files });
@@ -22,7 +22,7 @@ const Body = () => {
   };
 
   return (
-    <div className="bg-black rounded-b-lg rounded-t-2xl m-1">
+    <div className=" rounded-b-lg rounded-t-2xl m-1">
       <Formu onSubmit={handleSubmit} />
     </div>
   );

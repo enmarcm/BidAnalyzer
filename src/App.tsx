@@ -2,36 +2,35 @@ import Body from "./components/Body";
 import Header from "./components/Header";
 import "tailwindcss/tailwind.css";
 import { useStatus } from "./hooks/useStatus";
-import { useEffect, useState } from "react";
+import { useOpen } from "./hooks/useOpen";
 import Modal from "./components/Modal";
+import Loader from "./components/Loader";
+import { useCloseModal } from "./hooks/useCloseModal.ts";
 
 function App() {
-  const { content, setContent, setLoading } = useStatus();
-  const [open, isOpen] = useState(false);
-
-  useEffect(() => {
-    if (!content) return;
-
-    isOpen(true);
-  }, [content]);
-
-  const handleClose = () =>{
-    setContent('')
-    setLoading(false)
-    isOpen(false)
-  }
+  const { content, loading } = useStatus();
+  const { open, isOpen } = useOpen({ content });
+  const { handleClose } = useCloseModal({ isOpen });
 
   return (
-    <section className="w-full h-screen bg-primary flex flex-col items-center justify-center ">
-      {open && <Modal setClose={handleClose}>{content}</Modal>}
+    <section className="w-full h-screen bg-primary flex flex-col items-center justify-center bg-opacity-95">
+      {loading ? (
+        <Loader />
+      ) : (
+        <>
+          {open && <Modal setClose={handleClose}>{content}</Modal>}
 
-      <div
-        className={`min-w-[300px] w-[400px] h-full my-4 bg-white  shadow-xl grid grid-rows-layout rounded-lg ${( open) ? "blur-lg" : ""}`}
-      >
-        <Header />
+          <div
+            className={`min-w-[300px] w-[400px] h-full my-4  shadow-md grid grid-rows-layout rounded-lg ${
+              open ? "blur-lg" : ""
+            }`}
+          >
+            <Header />
 
-        <Body />
-      </div>
+            <Body />
+          </div>
+        </>
+      )}
     </section>
   );
 }
