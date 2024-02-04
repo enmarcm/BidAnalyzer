@@ -17,7 +17,7 @@ const Formu = ({
         <textarea
           name="privateKey"
           id="privateKey"
-          className="rounded-md resize-none h-32 overflow-y-auto bg-inputs p-1 text-sm font-light focus:outline-blue-400 "
+          className="rounded-md resize-none h-32 overflow-y-auto bg-inputs p-1 text-sm font-light focus:outline-blue-400"
         ></textarea>
       </label>
 

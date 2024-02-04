@@ -1,4 +1,4 @@
-import { constans } from "../constants.ts";
+import { URL } from "../constants/URL.ts";
 export async function formDataProcess({
   privateKey,
   files,
@@ -14,7 +14,7 @@ export async function formDataProcess({
       newFormData.append("files", file);
     });
 
-    const response = await fetch(constans.URL_DECRYPT, {
+    const response = await fetch(URL.URL_DECRYPT, {
       method: "POST",
       body: newFormData,
       mode: "cors",

@@ -51,3 +51,25 @@
 *{
   transition: all 0.3s ease-in-out; 
 }
+
+/* Barra */
+/* Estilo para la barra de desplazamiento */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Estilo para el track (la parte "base" de la barra de desplazamiento) */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Estilo para el thumb (la parte "móvil" de la barra de desplazamiento) */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Cambia el color del thumb al pasar el mouse */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

@@ -16,7 +16,8 @@ export default {
         secondary: "#777777",
         excel: "#206400",
         resalt: "#E0BC81",
-        inputs: "#3C3B3B"
+        inputs: "#3C3B3B",
+        mavares: "#E0BC21",
       },
     },
   },
