@@ -1,8 +1,9 @@
 import CopyToClipboard from "../components/CopyToClipboard";
-import FormCSR from "../components/FormCSR";
+import FormCSR from "../forms/FormCSR";
 import { useCSR } from "../hooks/useCSR";
 
-const GenerateCSR = () => {
+
+const GenerateCSR =  () => {
   const { csrContent, handleSubmit } = useCSR();
  
   return (

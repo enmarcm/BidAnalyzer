@@ -24,14 +24,14 @@ export function useCSR(){
   
       setLoading(true);
       const data = await jsonSend({ url: URL.URL_GENERATE_CSR, obj: newValues });
-      const dataJson = JSON.parse(data)
+      
   
-      if(dataJson.error){
-        setContent(dataJson.error)
+      if(data){
+        setContent(data.error)
         setLoading(false)
       }
       
-      const dataMapped = dataJson.success.replace(/\r\n\g/, "\n")
+      const dataMapped = data.success.replace(/\r\n\g/, "\n")
       setLoading(false);
   
       setCsrContent(dataMapped);

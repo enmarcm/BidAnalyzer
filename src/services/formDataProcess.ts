@@ -1,4 +1,5 @@
 import { URL } from "../constants/URL.ts";
+
 export async function formDataProcess({
   privateKey,
   files,
@@ -7,6 +8,10 @@ export async function formDataProcess({
   files: Array<File>;
 }) {
   try {
+    if (!files || files.length === 0) {
+      return { error: "No hay archivos a enviar" };
+    }
+
     const newFormData = new FormData();
     newFormData.append("privateKey", privateKey as string);
 
@@ -21,7 +26,7 @@ export async function formDataProcess({
 
     return data;
   } catch (error) {
-    return `Ocurrio un error: ${error}`;
+    return { error: `Ocurrio un error: ${error}` };
   }
 }
 
@@ -40,17 +45,17 @@ export async function formDataSend({
     });
 
     const data = await response.json();
-    const dataParsed = JSON.stringify(data);
 
-    return dataParsed;
+    console.log(data)
+    return data;
   } catch (error) {
-    return JSON.stringify({ error: `Ocurrio un error: ${error}` });
+    return { error: `Ocurrio un error: ${error}` };
   }
 }
 
 export async function jsonSend({ url, obj }: { url: string; obj: any }) {
   try {
-    const dato = JSON.stringify(obj)
+    const dato = JSON.stringify(obj);
     const response = await fetch(url, {
       method: "POST",
       body: dato,
@@ -65,8 +70,7 @@ export async function jsonSend({ url, obj }: { url: string; obj: any }) {
     }
 
     const data = await response.json();
-    const dataParsed = JSON.stringify(data);
-    return dataParsed;
+    return data;
   } catch (error) {
     return JSON.stringify({ error: `Ocurrio un error: ${error}` });
   }

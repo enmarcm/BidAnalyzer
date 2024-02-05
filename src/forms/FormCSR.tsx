@@ -1,22 +1,21 @@
 import options from "../mocks/countries.json";
-import days from "../mocks/days.json";
-import LabelForm from "./LabelForm";
+import LabelForm from "../components/LabelForm";
 
-const FormCertificate = ({
+const FormCSR = ({
   handleSubmit,
 }: {
   handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
 }) => {
   return (
     <form
-      className="p-4 box-border flex flex-col justify-between h-full overflow-y-auto"
+      className="p-4 box-border flex flex-col  justify-between h-full"
       onSubmit={handleSubmit}
     >
       <LabelForm>
-        Ingrese el nombre de la empresa
+        Ingrese el nombre del dominio
         <input
-          name="companyName"
-          id="companyName"
+          name="commonName"
+          id="commonName"
           className="rounded-md overflow-y-auto bg-inputs p-1 text-sm font-light focus:outline-blue-400"
           type="text"
         />
@@ -25,8 +24,8 @@ const FormCertificate = ({
       <LabelForm>
         Ingrese el pais
         <select
-          name="countryName"
-          id="countryName"
+          name="country"
+          id="country"
           className="rounded-md overflow-y-auto bg-inputs p-1 text-sm font-light focus:outline-blue-400"
         >
           {options.map((country) => {
@@ -42,8 +41,8 @@ const FormCertificate = ({
       <LabelForm>
         Ingrese el estado
         <input
-          name="stateName"
-          id="stateName"
+          name="state"
+          id="state"
           className="rounded-md overflow-y-auto bg-inputs p-1 text-sm font-light focus:outline-blue-400"
           type="text"
         />
@@ -51,8 +50,8 @@ const FormCertificate = ({
       <LabelForm>
         Ingrese la ciudad
         <input
-          name="localityName"
-          id="localityName"
+          name="locality"
+          id="locality"
           className="rounded-md overflow-y-auto bg-inputs p-1 text-sm font-light focus:outline-blue-400"
           type="text"
         />
@@ -60,52 +59,27 @@ const FormCertificate = ({
       <LabelForm>
         Ingrese la compañia
         <input
-          name="organitationName"
-          id="organitationName"
+          name="organization"
+          id="organization"
           className="rounded-md overflow-y-auto bg-inputs p-1 text-sm font-light focus:outline-blue-400"
           type="text"
         />
       </LabelForm>
       <LabelForm>
-        Ingrese el correo
+        Ingrese el departamento de la empresa
         <input
-          name="email"
-          id="email"
+          name="organizationUnit"
+          id="organizationUnit"
           className="rounded-md overflow-y-auto bg-inputs p-1 text-sm font-light focus:outline-blue-400"
-          type="mail"
+          type="text"
         />
-      </LabelForm>
-      <LabelForm>
-        Ingrese los días que será valido
-        <select
-          name="days"
-          id="days"
-          className="rounded-md overflow-y-auto bg-inputs p-1 text-sm font-light focus:outline-blue-400"
-        >
-          {days.map((day) => {
-            return (
-              <option value={day.days} key={day.days}>
-                {day.days}
-              </option>
-            );
-          })}
-        </select>
       </LabelForm>
 
       <LabelForm>
         Ingrese la llave privada
         <textarea
-          name="privateKeyPem"
-          id="privateKeyPem"
-          className="rounded-md resize-none h-28 overflow-y-auto bg-inputs p-3 text-sm font-light focus:outline-blue-400 mb-2"
-        ></textarea>
-      </LabelForm>
-
-      <LabelForm>
-        Ingrese el certificado CSR
-        <textarea
-          name="csrPem"
-          id="csrPem"
+          name="privateKey"
+          id="privateKey"
           className="rounded-md resize-none h-28 overflow-y-auto bg-inputs p-3 text-sm font-light focus:outline-blue-400 mb-2"
         ></textarea>
       </LabelForm>
@@ -117,4 +91,4 @@ const FormCertificate = ({
   );
 };
 
-export default FormCertificate;
+export default FormCSR;

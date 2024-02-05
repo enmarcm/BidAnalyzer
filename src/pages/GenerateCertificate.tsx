@@ -1,4 +1,4 @@
-import FormCertificate from "../components/FormCertificate";
+import FormCertificate from "../forms/FormCertificate";
 import { useCertificate } from "../hooks/useCertificate";
 import CopyToClipboard from "../components/CopyToClipboard";
 

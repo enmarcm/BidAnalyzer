@@ -5,6 +5,8 @@ import Licitaciones from "./Licitaciones";
 import GenerateKeys from "./GenerateKeys";
 import GenerateCSR from "./GenerateCSR";
 import GenerateCertificate from "./GenerateCertificate";
+import CifrateText from "./CifrateText";
+import DecryptText from "./DecryptText";
 
 const RoutesComponent = () => {
   return (
@@ -28,12 +30,12 @@ const RoutesComponent = () => {
           element={<GenerateCertificate />}
         />
         <Route
-          path={`/${RoutesRouter.ENCRYPT_PUBLIC_FILE}`}
-          element={<button></button>}
+          path={`/${RoutesRouter.ENCRYPT_PUBLIC_TEXT}`}
+          element={<CifrateText />}
         />
         <Route
-          path={`/${RoutesRouter.DECRYPT_PRIVATE_FILE}`}
-          element={<button></button>}
+          path={`/${RoutesRouter.DECRYPT_PRIVATE_TEXT}`}
+          element={<DecryptText />}
         />
       </Routes>
     </>

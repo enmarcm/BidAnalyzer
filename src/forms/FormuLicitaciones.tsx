@@ -1,4 +1,4 @@
-import DragAndDrop from "./DragAndDrop.tsx";
+import DragAndDrop from "../components/DragAndDrop.tsx";
 
 const FormuLicitaciones = ({
   onSubmit,
@@ -7,7 +7,7 @@ const FormuLicitaciones = ({
 }) => {
   return (
     <form
-      className="p-4 flex flex-col  justify-between h-full"
+      className="p-4 flex flex-col  justify-between h-full gap-8"
       onSubmit={onSubmit}
     >
       <label className="text-white flex flex-col gap-3 font-bold text-lg">

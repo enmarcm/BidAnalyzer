@@ -32,14 +32,13 @@ export function useCertificate() {
       url: URL.URL_GENERATE_CERTIFICATE,
       obj: newValues,
     });
-    const dataJson = JSON.parse(data);
 
-    if (dataJson.error) {
-      setContent(dataJson.error);
+    if (data.error) {
+      setContent(data.error);
       setLoading(false);
     }
 
-    const dataMapped = dataJson.success.replace(/\r\n\g/, "\n");
+    const dataMapped = data.success.replace(/\r\n\g/, "\n");
     setLoading(false);
 
     setCertificateContent(dataMapped);

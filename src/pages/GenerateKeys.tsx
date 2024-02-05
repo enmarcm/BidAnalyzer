@@ -6,7 +6,7 @@ const SubTitle = ({ children }: { children: React.ReactNode }) => (
 );
 
 const ContentKey = ({ children }: { children: React.ReactNode }) => (
-  <div className="relative overflow-y-auto overflow-x-hidden max-h-72 text-wrap w-full">
+  <div className="relative overflow-y-auto overflow-x-hidden max-h-72 text-wrap w-full h-full">
     {children}
   </div>
 );
@@ -17,14 +17,14 @@ const GenerateKeys = () => {
 
   return (
     <div className="text-white h-full grid grid-rows-2 grid-cols-1 w-full p-8 gap-8">
-      <div>
+      <div className="h-full">
         <SubTitle>Llave privada</SubTitle>
         <ContentKey>
           <CopyToClipboard text={keys?.privateKey} />
           {keys?.privateKey}
         </ContentKey>
       </div>
-      <div>
+      <div className="h-full">
         <SubTitle>Llave publica</SubTitle>
         <ContentKey>
           <CopyToClipboard text={keys?.publicKey} />

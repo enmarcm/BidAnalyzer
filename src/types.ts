@@ -26,3 +26,26 @@ export type GenerateCertificateForm = {
   days: number;
   email: string;
 };
+
+export type CifrateTextType = {
+  publicKey: string;
+  data: string;
+};
+
+export type DecrifrateTextType = {
+  privateKey: string;
+  data: string;
+};
+
+export type WinnerData = {
+  name: string;
+  minValue: number;
+};
+
+export type ModalProps = {
+  children:
+    | React.ReactNode
+    | { message: string; winner: WinnerData }
+    | { message: string; winners: WinnerData[] };
+  setClose?: () => void;
+};

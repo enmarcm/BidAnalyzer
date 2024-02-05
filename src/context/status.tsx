@@ -1,8 +1,8 @@
 import { useState, createContext } from "react";
 
 interface StatusContextType {
-  content: String;
-  setContent: React.Dispatch<React.SetStateAction<string>>;
+  content: String | Array<Object> | Object;
+  setContent: React.Dispatch<React.SetStateAction<string|Array<Object>> | Object>;
   loading: boolean;
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
@@ -12,7 +12,7 @@ export const StatusContext = createContext<StatusContextType | undefined>(
 );
 
 export function StatusProvider({ children }: { children: React.ReactNode }) {
-  const [content, setContent] = useState("");
+  const [content, setContent] = useState<string | Array<Object> | Object>("");
   const [loading, setLoading] = useState(false);
 
   return (
