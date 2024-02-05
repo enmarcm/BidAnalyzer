@@ -1,9 +1,9 @@
-import Formu from "./Formu";
-import { useFiles } from "../hooks/useFiles";
-import { useStatus } from "../hooks/useStatus";
+import Formu from "./FormuLicitaciones.tsx";
+import { useFiles } from "../hooks/useFiles.ts";
+import { useStatus } from "../hooks/useStatus.ts";
 import { formDataProcess } from "../services/formDataProcess.ts";
 
-const Body = () => {
+const BodyLicitaciones = () => {
   const { files } = useFiles();
   const { setLoading, setContent } = useStatus();
 
@@ -12,7 +12,7 @@ const Body = () => {
     const formData = new FormData(e.target as HTMLFormElement);
 
     const privateKeyGet = formData.get("privateKey");
-    const privateKey = privateKeyGet ? privateKeyGet: null;
+    const privateKey = privateKeyGet ? privateKeyGet : null;
 
     setLoading(true);
     const result = await formDataProcess({ privateKey, files });
@@ -28,4 +28,4 @@ const Body = () => {
   );
 };
 
-export default Body;
+export default BodyLicitaciones;

@@ -1,11 +1,10 @@
 import DragAndDrop from "./DragAndDrop.tsx";
 
-const Formu = ({
+const FormuLicitaciones = ({
   onSubmit,
 }: {
   onSubmit?: (e: React.FormEvent<HTMLFormElement>) => void;
 }) => {
-  
   return (
     <form
       className="p-4 flex flex-col  justify-between h-full"
@@ -13,7 +12,9 @@ const Formu = ({
     >
       <label className="text-white flex flex-col gap-3 font-bold text-lg">
         Ingrese la llave privada
-        <span className="font-light text-sm opacity-95">Si no ingresa, se usará la que tiene el servidor por defecto</span>
+        <span className="font-light text-sm opacity-95">
+          Si no ingresa, se usará la que tiene el servidor por defecto
+        </span>
         <textarea
           name="privateKey"
           id="privateKey"
@@ -32,4 +33,4 @@ const Formu = ({
   );
 };
 
-export default Formu;
+export default FormuLicitaciones;

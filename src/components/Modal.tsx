@@ -11,8 +11,8 @@ const Modal = ({
   };
 
   return (
-    <div className=" md:w-1/3 rounded-lg bg-opacity-65 bg-gray-700 flex p-16 flex-col items-center justify-between gap-4 h-2/4 absolute z-50 sm:h-1/2 sm:w-2/3 ">
-      <div className="flex flex-col text-white">
+    <div className="max-w-sm md:w-1/3 rounded-lg bg-opacity-65 bg-gray-700 flex p-16 flex-col items-center justify-between gap-4 h-2/4 absolute z-50 sm:h-1/2 sm:w-2/3 ">
+      <div className="flex flex-col text-white w-full text-wrap overflow-auto">
         <p className="font-bold ">Mensaje:</p>
         {children}
       </div>

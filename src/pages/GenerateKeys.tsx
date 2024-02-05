@@ -1,57 +1,35 @@
-import { useEffect, useState } from "react";
-import { URL } from "../constants/URL";
-import { useStatus } from "../hooks/useStatus";
-
-type KeysType = {
-  publicKey: string;
-  privateKey: string;
-};
+import { useKeys } from "../hooks/useKeys";
+import CopyToClipboard from "../components/CopyToClipboard";
 
 const SubTitle = ({ children }: { children: React.ReactNode }) => (
-  <h2 className="mb-5 text-lg text-center font-bold">{children}</h2>
+  <h2 className="mb-5 text-lg text-center font-bold ">{children}</h2>
 );
 
 const ContentKey = ({ children }: { children: React.ReactNode }) => (
-  <div className="overflow-y-auto max-h-72 text-wrap w-full">{children}</div>
+  <div className="relative overflow-y-auto overflow-x-hidden max-h-72 text-wrap w-full">
+    {children}
+  </div>
 );
 
+
 const GenerateKeys = () => {
-  const {setLoading} = useStatus()
-
-  const [keys, setKeys] = useState<KeysType>({
-    publicKey: "",
-    privateKey: "",
-  });
-  useEffect(() => {
-    const peticion = async () => {
-      setLoading(true)
-      const result = await fetch(URL.URL_GENERATE_PAIR_KEYS);
-      const data = await result.json();
-
-      if (!data?.publicKey || !data?.privateKey)
-      throw new Error("No se genero el par de llaves");
-    
-    const obj: KeysType = {
-      publicKey: data.publicKey,
-      privateKey: data.privateKey,
-    };
-    
-    setLoading(false)
-    setKeys(obj);
-    };
-
-    peticion();
-  }, []);
+  const { keys } = useKeys();
 
   return (
-    <div className="text-white h-full grid grid-rows-2 grid-cols-1 w-full p-8">
+    <div className="text-white h-full grid grid-rows-2 grid-cols-1 w-full p-8 gap-8">
       <div>
         <SubTitle>Llave privada</SubTitle>
-        <ContentKey>{keys?.privateKey}</ContentKey>
+        <ContentKey>
+          <CopyToClipboard text={keys?.privateKey} />
+          {keys?.privateKey}
+        </ContentKey>
       </div>
       <div>
         <SubTitle>Llave publica</SubTitle>
-        <ContentKey>{keys?.publicKey}</ContentKey>
+        <ContentKey>
+          <CopyToClipboard text={keys?.publicKey} />
+          {keys?.publicKey}
+        </ContentKey>
       </div>
     </div>
   );

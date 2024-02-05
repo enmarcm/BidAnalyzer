@@ -1,5 +1,5 @@
 import Header from "../components/Header.tsx";
-import Body from "../components/Body.tsx";
+import Body from "../components/BodyLicitaciones.tsx";
 
 const Licitaciones = () => {
   return (
