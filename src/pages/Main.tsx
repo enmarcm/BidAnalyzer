@@ -4,7 +4,7 @@ import { RoutesRouter } from "../constants/RoutesRouter";
 const Main = () => {
   return (
     <>
-      <div className="flex flex-col gap-5 text-white h-full items-center justify-center">
+      <div className="flex flex-col gap-5 text-white h-full items-center justify-center box-border">
         <h1 className="text-3xl font-bold my-4">Crypto Manager</h1>
         <NavButton to={`/${RoutesRouter.LICITACIONES}`}>
           Licitaciones Excel
@@ -16,12 +16,12 @@ const Main = () => {
         <NavButton to={`/${RoutesRouter.GENERATE_CERTIFICATE}`}>
           Generar Certificados
         </NavButton>
-        <NavButton to={`/${RoutesRouter.ENCRYPT_PUBLIC_FILE}`}>
+        {/* <NavButton to={`/${RoutesRouter.ENCRYPT_PUBLIC_FILE}`}>
           Cifrar con llave publica
         </NavButton>
         <NavButton to={`/${RoutesRouter.DECRYPT_PRIVATE_FILE}`}>
           Descifrar archivo
-        </NavButton>
+        </NavButton> */}
       </div>
     </>
   );

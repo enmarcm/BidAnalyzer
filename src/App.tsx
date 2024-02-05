@@ -8,8 +8,9 @@ function App() {
 
   return (
     <>
-      <section className="w-full h-screen bg-primary flex flex-col items-center justify-center bg-opacity-95">
+      <section className="w-full min-h-screen bg-primary flex flex-col items-center justify-center bg-opacity-95 box-border">
         {loading && <Loader />}
+        
         <Content />
       </section>
     </>

@@ -14,3 +14,15 @@ export type GenerateCSRForm = {
   organizationUnit: string;
   privateKey: string;
 };
+
+export type GenerateCertificateForm = {
+  csrPem: string;
+  privateKeyPem: string;
+  companyName: string;
+  countryName: countryMinimal;
+  stateName: string;
+  localityName: string;
+  organitationName: string;
+  days: number;
+  email: string;
+};

@@ -4,6 +4,7 @@ import Main from "./Main";
 import Licitaciones from "./Licitaciones";
 import GenerateKeys from "./GenerateKeys";
 import GenerateCSR from "./GenerateCSR";
+import GenerateCertificate from "./GenerateCertificate";
 
 const RoutesComponent = () => {
   return (
@@ -24,7 +25,7 @@ const RoutesComponent = () => {
         />
         <Route
           path={`/${RoutesRouter.GENERATE_CERTIFICATE}`}
-          element={<button></button>}
+          element={<GenerateCertificate />}
         />
         <Route
           path={`/${RoutesRouter.ENCRYPT_PUBLIC_FILE}`}

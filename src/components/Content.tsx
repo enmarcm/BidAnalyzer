@@ -16,7 +16,7 @@ const Content = () => {
       <div
         className={`${
           open ? "blur-lg pointer-events-none" : ""
-        } min-w-[300px] w-[400px] h-full`}
+        } min-w-[300px] w-[400px] h-full box-border`}
       >
         <RoutesComponent />
       </div>
