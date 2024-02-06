@@ -1,6 +1,6 @@
 import { WinnerData, ModalProps } from "../types";
 //@ts-ignore
-import confetti from 'canvas-confetti';
+import confetti from "canvas-confetti";
 
 const Modal = ({ children, setClose }: ModalProps) => {
   const handleClick = () => setClose?.();
@@ -12,7 +12,7 @@ const Modal = ({ children, setClose }: ModalProps) => {
     </div>
   );
 
-  const renderChildren = () => {
+  const renderChildren = (): React.ReactNode => {
     if (
       typeof children === "object" &&
       children !== null &&
@@ -34,7 +34,8 @@ const Modal = ({ children, setClose }: ModalProps) => {
         </>
       );
     }
-    return children;
+
+    return children as React.ReactNode;
   };
 
   return (

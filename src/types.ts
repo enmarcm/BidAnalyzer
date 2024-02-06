@@ -46,6 +46,7 @@ export type ModalProps = {
   children:
     | React.ReactNode
     | { message: string; winner: WinnerData }
-    | { message: string; winners: WinnerData[] };
+    | { message: string; winners: WinnerData[] }
+    | Object;
   setClose?: () => void;
 };
