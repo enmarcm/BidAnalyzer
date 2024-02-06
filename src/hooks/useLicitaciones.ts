@@ -21,14 +21,12 @@ export function useLicitaciones() {
     if (typeof result === "object" && result !== null && "error" in result) {
       return setContent(result.error);
     }
-
     const winners = result.success;
 
     const newWinners = {
       message: "Ha ganado",
       winners,
     };
-
 
     setContent(newWinners);
   };
