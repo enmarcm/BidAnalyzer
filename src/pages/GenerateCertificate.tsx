@@ -1,6 +1,6 @@
 import FormCertificate from "../forms/FormCertificate";
 import { useCertificate } from "../hooks/useCertificate";
-import CopyToClipboard from "../components/CopyToClipboard";
+import ButtonsActions from "../components/ButtonsActions";
 
 const GenerateCertificate = () => {
   const { certificateContent, handleSubmit } = useCertificate();
@@ -13,7 +13,7 @@ const GenerateCertificate = () => {
 
       {certificateContent ? (
         <div className="w-full overflow-y-auto relative overflow-x-hidden h-full my-2 text-white">
-          <CopyToClipboard text={certificateContent} />
+          <ButtonsActions text={certificateContent} />
           {certificateContent}
         </div>
       ) : (

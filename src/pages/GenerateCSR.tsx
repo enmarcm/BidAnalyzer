@@ -1,4 +1,4 @@
-import CopyToClipboard from "../components/CopyToClipboard";
+import ButtonsActions from "../components/ButtonsActions";
 import FormCSR from "../forms/FormCSR";
 import { useCSR } from "../hooks/useCSR";
 
@@ -14,7 +14,7 @@ const GenerateCSR =  () => {
 
       {csrContent ? (
         <div className="w-full overflow-y-auto relative overflow-x-hidden h-full my-2 text-white">
-          <CopyToClipboard text={csrContent} />
+          <ButtonsActions text={csrContent} />
           {csrContent}
         </div>
       ) : (

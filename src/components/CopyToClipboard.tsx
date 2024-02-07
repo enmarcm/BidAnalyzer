@@ -13,7 +13,7 @@ const CopyToClipboard = ({ text }: { text: string }) => {
       onClick={handleCopy}
       className={`flex items-center justify-center ${
         copied ? "bg-green-600" : "bg-blue-400"
-      } text-white sticky  p-2 top-0 left-3/4 rounded hover:opacity-90 w-20`}
+      } text-white sticky  p-2 top-0  rounded hover:opacity-90 w-20`}
     >
       {copied ? "Copiado" : "Copiar"}
     </button>

@@ -1,10 +1,10 @@
 import { useState } from "react";
-import CopyToClipboard from "../components/CopyToClipboard";
 import LabelForm from "../components/LabelForm";
 import { useStatus } from "../hooks/useStatus";
 import { DecrifrateTextType } from "../types";
 import { jsonSend } from "../services/formDataProcess";
 import { URL } from "../constants/URL";
+import ButtonsActions from "../components/ButtonsActions";
 
 const DecryptText = () => {
   const [decifrateContent, setDecifrateContent] = useState();
@@ -35,7 +35,7 @@ const DecryptText = () => {
 
       {decifrateContent ? (
         <div className="w-full overflow-y-auto relative overflow-x-auto h-full my-2 text-white text-wrap flex-wrap">
-          <CopyToClipboard text={decifrateContent} />
+          <ButtonsActions text={decifrateContent} />
           {decifrateContent}
         </div>
       ) : (

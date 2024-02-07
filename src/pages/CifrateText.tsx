@@ -1,4 +1,4 @@
-import CopyToClipboard from "../components/CopyToClipboard";
+import ButtonsActions from "../components/ButtonsActions";
 import FormCifrateText from "../forms/FormCifrateText";
 
 import { useCifrateText } from "../hooks/useCifrateText";
@@ -13,7 +13,7 @@ const CifrateText = () => {
 
       {cifrateContent ? (
         <div className="w-full overflow-y-auto relative overflow-x-auto h-full my-2 text-white text-wrap flex-wrap">
-          <CopyToClipboard text={cifrateContent} />
+          <ButtonsActions text={cifrateContent} />
           {cifrateContent}
         </div>
       ) : (

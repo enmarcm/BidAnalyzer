@@ -18,8 +18,6 @@ export function useKeys() {
         const result = await fetch(URL.URL_GENERATE_PAIR_KEYS);
         const data = await result.json();
 
-        console.log(data);
-
         if (!data?.publicKey || !data?.privateKey) {
           setLoading(false);
           return "No se genero el par de llaves";
